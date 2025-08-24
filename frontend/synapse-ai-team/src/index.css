@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Vibrant Colorful AI Theme */
+    --background: 220 20% 5%;
+    --foreground: 0 0% 100%;
+
+    --card: 240 30% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 30% 8%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 280 100% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 100% 60%;
+    --secondary-foreground: 220 20% 5%;
+
+    --muted: 240 20% 12%;
+    --muted-foreground: 240 10% 70%;
+
+    --accent: 45 100% 60%;
+    --accent-foreground: 220 20% 5%;
+
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 280 50% 30%;
+    --input: 240 40% 15%;
+    --ring: 280 100% 65%;
+
+    --radius: 0.75rem;
+
+    /* Vibrant Agent Status Colors */
+    --agent-pending: 240 60% 50%;
+    --agent-running: 180 100% 60%;
+    --agent-success: 120 100% 50%;
+    --agent-error: 0 100% 65%;
+
+    /* Rainbow Special Effects */
+    --glow-primary: 280 100% 65%;
+    --glow-accent: 180 100% 60%;
+    --glow-secondary: 45 100% 60%;
+    --glow-success: 120 100% 50%;
+    --gradient-primary: linear-gradient(135deg, hsl(280 100% 65%) 0%, hsl(180 100% 60%) 50%, hsl(45 100% 60%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(240 30% 8%) 0%, hsl(280 50% 15%) 100%);
+    --gradient-rainbow: linear-gradient(45deg, hsl(280 100% 65%) 0%, hsl(340 100% 65%) 25%, hsl(45 100% 60%) 50%, hsl(120 100% 50%) 75%, hsl(180 100% 60%) 100%);
+    --gradient-neon: linear-gradient(135deg, hsl(280 100% 65%) 0%, hsl(320 100% 65%) 25%, hsl(180 100% 60%) 50%, hsl(45 100% 60%) 75%, hsl(120 100% 50%) 100%);
+    
+    /* Enhanced Graph Styling */
+    --node-border: 280 80% 50%;
+    --edge-color: 280 60% 40%;
+    --edge-active: 180 100% 60%;
+
+    --sidebar-background: 240 30% 8%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 280 100% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 180 100% 60%;
+    --sidebar-accent-foreground: 220 20% 5%;
+    --sidebar-border: 280 50% 30%;
+    --sidebar-ring: 280 100% 65%;
+
+    /* Additional Colorful Variables */
+    --pink: 320 100% 65%;
+    --orange: 30 100% 60%;
+    --cyan: 180 100% 60%;
+    --lime: 120 100% 50%;
+    --violet: 280 100% 65%;
+    --rose: 340 100% 65%;
+  }
+
+  /* Light mode variant if needed */
+  .light {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --agent-pending: 215 20% 60%;
+    --node-border: 214.3 31.8% 85%;
+    --edge-color: 214.3 31.8% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .glow-primary {
+    box-shadow: 0 0 30px hsl(var(--glow-primary) / 0.5), 0 0 60px hsl(var(--glow-primary) / 0.3);
+  }
+  
+  .glow-accent {
+    box-shadow: 0 0 30px hsl(var(--glow-accent) / 0.5), 0 0 60px hsl(var(--glow-accent) / 0.3);
+  }
+
+  .glow-secondary {
+    box-shadow: 0 0 25px hsl(var(--glow-secondary) / 0.4);
+  }
+
+  .glow-success {
+    box-shadow: 0 0 25px hsl(var(--glow-success) / 0.4);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-rainbow {
+    background: var(--gradient-rainbow);
+  }
+
+  .gradient-neon {
+    background: var(--gradient-neon);
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-rainbow {
+    animation: rainbow-shift 3s ease-in-out infinite;
+  }
+
+  .animate-neon-pulse {
+    animation: neon-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--glow-primary) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--glow-primary) / 0.8);
+    }
+  }
+
+  @keyframes rainbow-shift {
+    0% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(180deg); }
+    100% { filter: hue-rotate(360deg); }
+  }
+
+  @keyframes neon-pulse {
+    0%, 100% {
+      box-shadow: 
+        0 0 20px hsl(var(--glow-primary) / 0.5),
+        0 0 40px hsl(var(--glow-accent) / 0.3),
+        0 0 60px hsl(var(--glow-secondary) / 0.2);
+    }
+    50% {
+      box-shadow: 
+        0 0 30px hsl(var(--glow-primary) / 0.8),
+        0 0 60px hsl(var(--glow-accent) / 0.6),
+        0 0 90px hsl(var(--glow-secondary) / 0.4);
+    }
+  }
+
+  /* Colorful text effects */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-rainbow {
+    background: var(--gradient-rainbow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-neon {
+    color: hsl(var(--accent));
+    text-shadow: 0 0 10px hsl(var(--accent) / 0.8);
+  }
+}
