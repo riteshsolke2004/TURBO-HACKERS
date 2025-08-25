@@ -60,8 +60,8 @@ export default function Signup() {
             >
               <Brain className="h-12 w-12 text-primary" />
             </motion.div>
-            <h1 className="text-3xl font-bold gradient-primary bg-clip-text text-transparent">
-              Join Synapse AI
+            <h1 className="text-3xl font-bold bg-gradient-to-bl bg-clip-text text-balance">
+              Join Multi-Agent AI
             </h1>
             <p className="text-muted-foreground mt-2">
               Create your account and start collaborating

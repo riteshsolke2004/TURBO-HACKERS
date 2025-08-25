@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-node-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
             <p className="text-muted-foreground text-sm">
-              © {currentYear} Synapse AI. All rights reserved.
+              © {currentYear} Multi-Agent AI. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link

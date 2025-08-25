@@ -52,11 +52,11 @@ export default function Login() {
             >
               <Brain className="h-12 w-12 text-primary" />
             </motion.div>
-            <h1 className="text-3xl font-bold gradient-primary bg-clip-text text-transparent">
+            <h1 className="text-3xl font-bold bg-gradient-to-b bg-clip-text text-balance">
               Welcome Back
             </h1>
             <p className="text-muted-foreground mt-2">
-              Sign in to access Synapse AI
+              Sign in to access Multi-Agent AI
             </p>
           </div>
 

@@ -33,12 +33,11 @@ const About = () => {
   ];
 
   const agents = [
-    { name: "Planner", role: "Strategic planning and task breakdown", color: "bg-primary" },
-    { name: "Data", role: "Data collection and preprocessing", color: "bg-accent" },
-    { name: "Analysis", role: "Data analysis and insights generation", color: "bg-agent-success" },
-    { name: "Report", role: "Report generation and documentation", color: "bg-agent-running" },
-    { name: "Critic", role: "Quality assurance and validation", color: "bg-agent-error" },
-    { name: "Arbiter", role: "Decision making and conflict resolution", color: "bg-agent-pending" }
+    { name: "Coordinator Agent", role: "Strategic planning and task breakdown", color: "bg-primary" },
+    { name: "Demand Forcast Agent", role: "Analyze market trendz", color: "bg-accent" },
+    { name: "Price Optimization Agent ", role: "Optimize Pricing strategy or Market competitive analysis", color: "bg-agent-success" },
+    { name: "Inventory Monitoring Agent", role: "Track Live stock Levels", color: "bg-agent-running" },
+    { name: "Final Result Agent", role: "Generate comprehensive report", color: "bg-agent-error" },
   ];
 
   return (
@@ -55,7 +54,7 @@ const About = () => {
           className="text-center space-y-4"
         >
           <h1 className="text-4xl font-bold bg-gradient-to-bl bg-clip-text text-balance">
-            About Synapse AI
+            About Multi-Agent AI
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Multi-Agent Collaboration for Complex Tasks - A revolutionary approach to AI problem-solving
@@ -74,10 +73,10 @@ const About = () => {
               Project Overview
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Synapse AI demonstrates how multiple specialized AI agents can collaborate to solve complex tasks, 
-              much like a human team. Each agent has a specific role and expertise, and they work together 
-              through a sophisticated communication network to achieve user-defined goals. This hackathon project 
-              showcases the future of AI collaboration and distributed problem-solving.
+            Multi-Agent AI demonstrates how multiple specialized AI agents can collaborate to solve complex tasks,
+              much like a human team. Each agent has a specific role and expertise, and they work together through a 
+              sophisticated communication network to achieve user-defined goals. This hackathon project showcases the 
+              future of AI collaboration and distributed problem-solving.
             </p>
           </Card>
         </motion.div>

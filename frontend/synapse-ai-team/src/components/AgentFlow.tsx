@@ -100,21 +100,24 @@ export const AgentFlow: React.FC<AgentFlowProps> = ({ currentGoal }) => {
     // },
   ];
 
-  const initialEdges: Edge[] = [
-    // Coordinator to all three middle agents
-    { id: "e1", source: "coordinator", target: "demand", animated: false },
-    { id: "e2", source: "coordinator", target: "inventory", animated: false },
-    { id: "e3", source: "coordinator", target: "pricing", animated: false },
-    
-    // All three middle agents to both final agents
-    { id: "e4", source: "demand", target: "final", animated: false },
-    { id: "e5", source: "inventory", target: "final", animated: false },
-    { id: "e6", source: "pricing", target: "final", animated: false },
-    
-    { id: "e7", source: "demand", target: "downstream", animated: false },
-    { id: "e8", source: "inventory", target: "downstream", animated: false },
-    { id: "e9", source: "pricing", target: "downstream", animated: false },
-  ];
+const initialEdges: Edge[] = [
+  // Coordinator fan-out
+  { id: "e1", source: "coordinator", target: "demand", animated: false },
+  { id: "e2", source: "coordinator", target: "inventory", animated: false },
+  { id: "e3", source: "coordinator", target: "pricing", animated: false },
+
+  // Demand → Inventory + Final
+  { id: "e4", source: "demand", target: "inventory", animated: false },
+  { id: "e5", source: "demand", target: "final", animated: false },
+
+  // Inventory → Pricing + Final
+  { id: "e6", source: "inventory", target: "pricing", animated: false },
+  { id: "e7", source: "inventory", target: "final", animated: false },
+
+  // Pricing → Final
+  { id: "e8", source: "pricing", target: "final", animated: false },
+];
+
 
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
