@@ -86,18 +86,18 @@ export const AgentFlow: React.FC<AgentFlowProps> = ({ currentGoal }) => {
         onSelect: setSelectedAgent
       },
     },
-    {
-      id: "downstream",
-      type: "agent",
-      position: { x: 550, y: 400 },
-      data: { 
-        label: "Downstream Systems agent", 
-        status: "pending",
-        description: ["• Integrates with external systems", "• Publishes results"],
-        logs: [],
-        onSelect: setSelectedAgent
-      },
-    },
+    // {
+    //   id: "downstream",
+    //   type: "agent",
+    //   position: { x: 550, y: 400 },
+    //   data: { 
+    //     label: "Downstream Systems agent", 
+    //     status: "pending",
+    //     description: ["• Integrates with external systems", "• Publishes results"],
+    //     logs: [],
+    //     onSelect: setSelectedAgent
+    //   },
+    // },
   ];
 
   const initialEdges: Edge[] = [

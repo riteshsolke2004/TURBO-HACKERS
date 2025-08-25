@@ -24,7 +24,7 @@ const Index = () => {
           >
             <h1 className="text-6xl md:text-7xl font-bold">
               <span className="text-rainbow animate-rainbow">
-                Synapse AI
+                Multi-Agent AI
               </span>
             </h1>
             

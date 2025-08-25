@@ -6,6 +6,11 @@ import os
 import logging
 from motor.motor_asyncio import AsyncIOMotorClient
 from beanie import init_beanie
+#changes
+from main1 import ProductOptimizer
+from pydantic import BaseModel
+# Create instance (no parameters needed)
+optimizer = ProductOptimizer()
 
 # Your existing imports (unchanged)
 from auth import router as auth_router
@@ -85,11 +90,29 @@ def root():
         "features": ["Authentication", "Multi-Agent Workflows", "WebSocket Support"],
         "version": "1.0.0"
     }
-
+class ProductRequest(BaseModel):
+    product_id: int
 # NEW: Health check
 @app.get("/health")
 def health():
     return {"status": "healthy", "timestamp": "2025-08-25"}
+@app.post("/analyze")
+def analyze_product(request: ProductRequest):
+    try:
+        result = optimizer.run(request.product_id)
+
+        # unpack final summary cleanly
+        return {
+            "status": "success",
+            "product_id": result["final_summary"]["product_id"],
+            "demand_forecast": result["final_summary"]["demand_forecast"],
+            "optimized_price": result["final_summary"]["optimized_price"],
+            "inventory": result["final_summary"]["inventory"],
+            "message": result["message"]
+        }
+
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
 
 if __name__ == "__main__":
     import uvicorn
