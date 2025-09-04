@@ -11,3 +11,16 @@ authlib==1.3.0              # Add this (was missing)
 starlette==0.38.0
 websockets==12.0            # Add for WebSocket support
 httpx==0.25.2              # Add for HTTP client
+itsdangerous==2.2.0
+cursor==1.3.5
+pymongo 
+joblib
+pandas
+numpy
+scikit-learn
+xgboost
+langgraph
+pydantic[email] 
+email-validator
+PyJWT
+bcrypt==4.0.1
